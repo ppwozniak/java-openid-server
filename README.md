@@ -1,4 +1,4 @@
-jos
+java-openid-server
 ===
 
 Java OpenID Server

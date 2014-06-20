@@ -1,11 +1,11 @@
-#
+# Exclude files and dirs
 
-/target
+target
 *.class
-/.classpath
-/.metadata
-/.project
-/.settings
-/.idea
+.classpath
+.metadata
+.project
+.settings
+.idea
 *.iml
-/nb*.xml
+nb*.xml
