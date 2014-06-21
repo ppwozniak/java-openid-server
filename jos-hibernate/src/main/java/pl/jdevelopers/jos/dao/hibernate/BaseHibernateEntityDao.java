@@ -150,7 +150,6 @@ public abstract class BaseHibernateEntityDao<T> extends HibernateDaoSupport {
      * @return the count
      */
     protected long count(final String queryString, final Object... values) {
-        return ((Number) getHibernateTemplate().find(queryString, values)
-                .get(0)).longValue();
+        return ((Number) getHibernateTemplate().find(queryString, values).get(0)).longValue();
     }
 }
