@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-						http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jos-hibernate</artifactId>
+    <packaging>jar</packaging>
+    <name><![CDATA[Java OpenID Server - Data Access Objects Hibernate Implementation]]></name>
+
     <parent>
         <groupId>pl.jdevelopers</groupId>
         <artifactId>java-openid-server</artifactId>
         <version>1.2-SNAPSHOT</version>
     </parent>
-    <artifactId>jos-hibernate</artifactId>
-    <packaging>jar</packaging>
-    <name><![CDATA[Java OpenID Server - Data Access Objects Hibernate Implementation]]></name>
+
     <reporting>
         <outputDirectory>../target/site/${project.artifactId}/</outputDirectory>
     </reporting>
@@ -46,6 +49,12 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.transaction</groupId>
+                    <artifactId>jta</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
